@@ -44,6 +44,13 @@ app.controller('Controller',function($scope, $http, Service) {
                 $scope.update();
             })
     }
+    $scope.modifyflo = function (floid) {
+        Service.createID(floid,$scope.body)
+            .then(function (response) {
+                console.log("response:", response);
+                $scope.update();
+            })
+    }
 });
 app.factory('Service', ['$http', function ServiceFactory($http) {
     return {
