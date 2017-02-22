@@ -24,7 +24,7 @@ app.controller('Controller',function($scope, $http, Service) {
             })
     }
     $scope.modify = function () {
-        Service.createPut($scope.id,$scope.body)
+        Service.createID($scope.id,$scope.body)
             .then(function (response) {
                 console.log("response:", response);
                 $scope.update();
@@ -55,7 +55,7 @@ app.factory('Service', ['$http', function ServiceFactory($http) {
             var url = "http://localhost:3000/flowers";
             return $http.get(url);
         },
-        createPut:function(id,data){
+        createID:function(id,data){
             var url = "http://localhost:3000/flowers/" + id;
             console.log (url);
             return $http.put(url,data);
