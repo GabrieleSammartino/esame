@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="esame">
+<head>
+
+
+
+</head>
+<body ng-controller="Controller">
+<script type="text/javascript" src="app.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+
+<div>
+  <pre>{{body}}</pre>
+  <input ng-model="body.flowerName">
+  <input ng-model="body.flowerScientificName">
+  <input ng-model="body.flowerColor">
+  <input ng-model="body.flowerInMedicine">
+
+<pre>{{id}}</pre>
+<input ng-model="id">
+
+
+  <button ng-click="insert()"> Invia </button>
+  <button ng-click="modify()"> Invia con Id </button>
+<br>
+</div>
+
+<div>
+<button ng-click="delete()"> Elimina questo fiore con questo id </button>
+<pre>{{id}}</pre>
+<input ng-model="id">
+</div>
+
+  <div ng-repeat="flower in flowers">
+    <h2>{{flower.flowerName}}</h2>
+    <p>{{flower.flowerScientificName}}</p>
+    <p>{{flower.flowerColor}}</p>
+    <p>{{flower.flowerInMedicine}}</p>
+    <p>{{flower._id}}</p>
+
+    <br>
+
+
+  </div>
+
+  </div>
+</body>
+</html>
