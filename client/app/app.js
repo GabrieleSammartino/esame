@@ -37,6 +37,13 @@ app.controller('Controller',function($scope, $http, Service) {
                 $scope.update();
             })
     }
+    $scope.deleteflo = function (floid) {
+        Service.idDelete(floid)
+            .then(function (response) {
+                console.log("response:", response);
+                $scope.update();
+            })
+    }
 });
 app.factory('Service', ['$http', function ServiceFactory($http) {
     return {
